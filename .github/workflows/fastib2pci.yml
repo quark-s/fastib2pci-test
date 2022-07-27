@@ -29,9 +29,11 @@ jobs:
       - name: build pci
         run: |
            export REPONAME="${GITHUB_REPOSITORY#*/}"
-           firstitem=$(ls ./items | | grep -e ".zip" | head -1)
+           firstitem=$(ls ./items | grep -e ".zip" | head -1)
            cd ./pci/scripts/packer
            npm i
+           echo $firstitem
+           echo "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME"
            node ./index.js -u "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME" -i "../../../items/$firstitem" -o "../../../pages/ibTaoConnector.zip"
              
       - name: Deploy
