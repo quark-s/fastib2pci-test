@@ -35,7 +35,7 @@ jobs:
            cd ./pci/scripts/packer
            npm i           
            echo "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME"
-           node ./index.js -u "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME" -i "$GITHUB_WORKSPACE/items/items" -o "$GITHUB_WORKSPACE/public/ibTaoConnector.zip"
+           node ./index.js -u "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME" -i "$GITHUB_WORKSPACE/items/items" -o "$GITHUB_WORKSPACE/public"
            cat ../../views/js/pciCreator/ibTaoConnector/confDefault.json
              
       - name: Deploy
