@@ -28,6 +28,8 @@ jobs:
             
       - name: build pci
         run: |
+           ls -lat
+           ls items
            export REPONAME="${GITHUB_REPOSITORY#*/}"
            cd ./pci/scripts/packer
            npm i           
