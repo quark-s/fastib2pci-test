@@ -29,7 +29,7 @@ jobs:
       - name: build pci
         run: |
            pwd
-           ls items/items
+           ls public
            echo "$GITHUB_WORKSPACE/public/ibTaoConnector.zip"
            export REPONAME="${GITHUB_REPOSITORY#*/}"
            cd ./pci/scripts/packer
