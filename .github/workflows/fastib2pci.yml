@@ -25,7 +25,7 @@ jobs:
         uses: actions/checkout@v3
         with: 
             path: 'items'
-			
+	
       - name: checkout pci
         run: git clone https://gitlab.tba-hosting.de/fwagner/oat-ibtaoconnector.git ./pci			
           
@@ -38,7 +38,7 @@ jobs:
            export REPONAME="${GITHUB_REPOSITORY#*/}"
            sed -i 's@/ee4pci/@/'"$REPONAME"'/@' ./ee/ee/package.json
            cd ee/ee && npm run build
-		   
+	
       - name: build pci
         run: |
            export REPONAME="${GITHUB_REPOSITORY#*/}"
