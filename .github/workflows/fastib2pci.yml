@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: store-pci
-          path: ${{$GITHUB_WORKSPACE}}/public/ibTaoConnector.zip
+          path: ${$GITHUB_WORKSPACE}/public/ibTaoConnector.zip
       - name: Deploy
         uses: s0/git-publish-subdir-action@develop
         env:
