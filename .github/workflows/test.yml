@@ -1,0 +1,16 @@
+name: test
+
+on: 
+  workflow_dispatch
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: take a screenshot
+        run: |
+          export REPONAME="${GITHUB_REPOSITORY#*/}"
+          npm install -D @playwright/test
+          npx playwright install --with-deps
+          npx playwright screenshot --wait-for-timeout 2000 --viewport-size 1024,768 "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME" screenshot.png
+          echo "https://$GITHUB_REPOSITORY_OWNER.github.io/$REPONAME"
